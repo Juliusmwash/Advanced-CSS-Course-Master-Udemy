@@ -384,7 +384,7 @@ Think of the units as asking different questions:
 Once CSS finds the thing they're relative to, it performs the calculation and obtains a **used/computed length in CSS pixels (px)** for layout/rendering.
 
 
-CSS value processing: What you need to know
+**CSS value processing: What you need to know**
 - Each property has an initial value, used if nothing is declared (and if there is no inheritance);
 - Browsers specify a **root font-size** for each page (usually 16ps);
 - Percentages and relative values are always converted to pixels;
@@ -394,3 +394,12 @@ CSS value processing: What you need to know
 - em are measured relative to the current font-size, if used to specify lengths;
 - rem are always measured relative to the document's root font-size;
 - vh and vw are simply percentage measurements of the viewport's height and width.
+
+
+**Inheritance: What you need to know**
+- Inheritance passes the values for some specific properties from parents to children - **more maintainable code**;
+- Properties related to text are inherited: font-family, font-size, color, etc;
+- The computed value of a property is what gets inherited, not the declared value.
+- Inheritance of a property only works if no one declares a value for that property;
+- The ***inherit*** keyword forces inheritance on a certain property;
+- The ***initial*** keyword resets a property to its initial value.
