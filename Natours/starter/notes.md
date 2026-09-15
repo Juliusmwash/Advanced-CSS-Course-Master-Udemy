@@ -403,3 +403,15 @@ Once CSS finds the thing they're relative to, it performs the calculation and ob
 - Inheritance of a property only works if no one declares a value for that property;
 - The ***inherit*** keyword forces inheritance on a certain property;
 - The ***initial*** keyword resets a property to its initial value.
+
+
+# Section 4: Introduction to Sass and NPM
+Main Sass features:
+    - **Variables**: for reusable values such as colors, font-sizes, spacing, etc;
+    - **Nesting**: to nest selectors inside of one another, allowing us to write less code;
+    - **Operators**: for mathematical operations right inside of CSS;
+    - **Partials and imports**: to write CSS in different files and importing them all into one single fie;
+    - **Mixins**: to write reusable pieces of CSS code;
+    - **Functions**: similar to mixins, with the difference that they produce a value that can then be used
+    - **Extends**: to make different selectors inherit declarations that are common to all of them;
+    - **Control directives**: for writing complex code using conditionals and loops.

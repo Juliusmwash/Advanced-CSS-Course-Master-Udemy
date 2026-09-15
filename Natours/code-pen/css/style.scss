@@ -1,0 +1,97 @@
+@use "sass:color";
+@use "sass:math";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+$color-primary: #f9ed69; // yellow color
+$color-secondary: #f08a5d; // orange
+$color-tertiary: #b83b5e; // pink
+$color-text-dark: #333;
+$color-text-light: #eee;
+
+$width-button: 150px;
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+}
+
+@mixin style-link-text($color) {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: $color;
+}
+
+@mixin style-btn-link-hover($bg-color) {
+  &:link {
+    background-color: $bg-color; //$color-secondary;
+  }
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%) // darken the color
+  }
+}
+
+@function divide($a, $b) {
+  $result: math.div($a, $b);
+  @return $result
+}
+
+html {
+  box-sizing: border-box;
+}
+
+nav {
+  margin: divide(90px, 3); //30px, just demonstrating the use of a custom function
+  background-color: $color-primary;
+
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  li {
+    display: inline-block;
+    margin-left: 30px;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    a:link {
+     @include style-link-text($color-text-dark);
+    }
+  }
+}
+
+.buttons {
+  float: right;
+}
+
+// Extend class
+%btn-placeholder {
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 108px;
+  width: $width-button;
+  @include style-link-text($color-text-light);
+}
+
+.btn-main {
+  @extend %btn-placeholder;
+  @include style-btn-link-hover($color-secondary)
+}
+
+.btn-hot {
+  @extend %btn-placeholder;
+  @include style-btn-link-hover($color-tertiary)
+}

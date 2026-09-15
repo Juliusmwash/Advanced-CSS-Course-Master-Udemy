@@ -1,0 +1,21 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "landing page for Natours Project",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile:sass": "sass starter/sass/main.scss starter/css/style.css -w"
+  },
+  "author": "Julius",
+  "keywords": [],
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.104.1"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true
+  }
+}
