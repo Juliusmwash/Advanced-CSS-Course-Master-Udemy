@@ -1,7 +1,35 @@
+@use "../abstracts/variables" as v;
+
 @mixin clearfix {
     &::after {
         content: "";
         display: table;
         clear: both;
     }
+}
+
+@mixin bg-clip-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+@mixin gradient-animate {
+    // 1. Make the gradient continuous and repeating (double the colors to loop smoothly)
+    background: linear-gradient(
+        90deg,
+        v.$anim-color-1 0% 12.5%,
+        v.$anim-color-2 12.5% 25%,
+        v.$anim-color-3 25% 37.5%,
+        v.$anim-color-4 37.5% 50%,
+        v.$anim-color-1 50% 62.5%,
+        v.$anim-color-2 62.5% 75%,
+        v.$anim-color-3 75% 87.5%,
+        v.$anim-color-4 87.5% 100%
+    );
+
+    // 2. Make the background twice as wide as the text container
+    background-size: 200% 100%;
+    color: transparent;
+
+    @include bg-clip-text;
 }

@@ -5,12 +5,13 @@
 @use "base/base";
 @use "base/animations";
 @use "base/typography";
-// @use "base/utilities";
+@use "base/utilities";
 
 @use "layouts/header";
 @use "layouts/grid";
 
-@use "components/heading-primary";
-@use "components/button";
+@use "components/headings";
+@use "components/buttons";
+@use "components/composition";
 
 @use "pages/home";

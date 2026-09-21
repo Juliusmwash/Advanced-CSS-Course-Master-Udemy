@@ -3,14 +3,11 @@
 .btn {
     &:link,
     &:visited {
-        text-transform: uppercase;
-        text-decoration: none;
-        padding: 1.5rem 4rem;
         display: inline-block;
         border-radius: 10rem;
         transition: all .2s;
         position: relative;
-        font-size: 1.6rem;
+        padding: 1.5rem 4rem;
     }
 
     &:hover {
@@ -53,5 +50,26 @@ S
         left: 0;
         z-index: -1;
         transition: all .4s;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        display: inline-block;
+        border-bottom: 1px solid v.$color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: v.$color-primary;
+        box-shadow: 0 1rem 2rem rgba(v.$color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba(v.$color-black, .15);
+        transform: translateY(0);
     }
 }

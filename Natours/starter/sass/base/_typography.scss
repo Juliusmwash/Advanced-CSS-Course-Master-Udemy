@@ -1,9 +1,66 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     line-height: 1.7;
-    color: v.$color-black;
-    padding: 3rem;
+    color: v.$color-gray-dark;
+}
+
+.heading-primary {
+    color: v.$color-white;
+    text-transform: uppercase;
+
+    &__main {
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+    }
+
+    &__sub {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+    }
+}
+
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: v.$default-font-size;
+    }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: transparent;
+}
+
+.heading-tertiary {
+    font-size: v.$default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: v.$default-font-size;
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: v.$default-font-size;
+        color: v.$color-primary;
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: v.$color-white;
+    }
 }

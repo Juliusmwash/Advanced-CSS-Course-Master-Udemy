@@ -1,3 +1,7 @@
+// FONT SIZES
+$default-font-size: 1.6rem;
+
+// COLOUR
 $color-primary: #55c57a;
 $color-primary-blue: #1c48d8d8;
 $color-primary-green: #06704dd8;
@@ -5,6 +9,9 @@ $color-gray-dark: #777;
 $color-white: #fff;
 $color-black: #000000;
 
+$color-grey-light-1: #f7f7f7;
+
+// ANIMATION
 $anim-color-1: rgb(243, 240, 84);
 $anim-color-2: rgb(116, 232, 84);
 $anim-color-3: rgb(84, 243, 150);
@@ -15,7 +22,6 @@ $anim-color-4: rgb(84, 243, 222);
 // $anim-color-3: rgb(215, 209, 221);
 
 $gradient-animation-duration: 5s;
-
 
 // GRID
 $grid-width: 114rem;

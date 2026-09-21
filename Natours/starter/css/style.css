@@ -12,6 +12,7 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
 }
 
 @keyframes gradient-rotate {
@@ -70,8 +71,71 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #000000;
-  padding: 3rem;
+  color: #777;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+.heading-primary__main {
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+}
+.heading-primary__sub {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+}
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: transparent;
+}
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+}
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  text-decoration: none;
+}
+.btn-text:hover {
+  color: #fff;
+}
+
+.u-center-text {
+  text-align: center;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
 }
 
 .header {
@@ -100,7 +164,6 @@ body {
 
 .row {
   max-width: 114rem;
-  background-color: #eee;
   margin: 0 auto;
 }
 .row:not(:last-child) {
@@ -112,8 +175,6 @@ body {
   clear: both;
 }
 .row [class^=col-] {
-  background-color: orangered;
-  height: 4rem;
   float: left;
 }
 .row [class^=col-]:not(:last-child) {
@@ -138,51 +199,42 @@ body {
   width: calc((100% - 6rem * 3) / 4 * 3 + 6rem * 2);
 }
 
-.heading-primary__main {
-  background: linear-gradient(90deg, rgb(243, 240, 84) 0% 12.5%, rgb(116, 232, 84) 12.5% 25%, rgb(84, 243, 150) 25% 37.5%, rgb(84, 243, 222) 37.5% 50%, rgb(243, 240, 84) 50% 62.5%, rgb(116, 232, 84) 62.5% 75%, rgb(84, 243, 150) 75% 87.5%, rgb(84, 243, 222) 87.5% 100%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
 .heading-primary {
-  color: #fff;
-  text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
 }
 .heading-primary__main {
   display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /*
-  animation-name: moveInLeft
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-delay: 3s;
-  animation-iteration-count: 3;
-  */
+  background: linear-gradient(90deg, rgb(243, 240, 84) 0% 12.5%, rgb(116, 232, 84) 12.5% 25%, rgb(84, 243, 150) 25% 37.5%, rgb(84, 243, 222) 37.5% 50%, rgb(243, 240, 84) 50% 62.5%, rgb(116, 232, 84) 62.5% 75%, rgb(84, 243, 150) 75% 87.5%, rgb(84, 243, 222) 87.5% 100%);
+  background-size: 200% 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
   animation: moveInLeft 1s ease-out, gradient-rotate 5s linear infinite;
 }
 .heading-primary__sub {
   display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
   animation: moveInRight 1s ease-out;
 }
 
+.heading-secondary {
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, rgba(28, 72, 216, 0.8470588235), rgba(6, 112, 77, 0.8470588235));
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 0.2s;
+}
+.heading-secondary:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
 .btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
   display: inline-block;
   border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem;
+  padding: 1.5rem 4rem;
 }
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -218,6 +270,65 @@ S .btn--animated {
   left: 0;
   z-index: -1;
   transition: all 0.4s;
+}
+
+.btn-text:link, .btn-text:visited {
+  display: inline-block;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px;
+  transition: all 0.2s;
+}
+.btn-text:hover {
+  background-color: #55c57a;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.btn-text:active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 10;
+  transition: all 0.1s;
+  outline-offset: 2rem;
+}
+.composition__photo--p1 {
+  left: 0;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  right: 0;
+  top: 2rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+.composition__photo:hover {
+  outline: 1.5rem solid #55c57a;
+  transform: scale(1.05) translateY(-0.5rem);
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.95);
+}
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.paragraph:not(:last-child) {
+  margin-bottom: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

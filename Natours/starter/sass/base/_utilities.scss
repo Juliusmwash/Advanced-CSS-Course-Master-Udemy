@@ -1,23 +1,15 @@
-@use "../abstracts/variables" as v;
+.u-center-text {
+    text-align: center;
+}
 
-%gradient-animate {
-    // 1. Make the gradient continuous and repeating (double the colors to loop smoothly)
-    background: linear-gradient(
-        90deg,
-        v.$anim-color-1 0% 12.5%,
-        v.$anim-color-2 12.5% 25%,
-        v.$anim-color-3 25% 37.5%,
-        v.$anim-color-4 37.5% 50%,
-        v.$anim-color-1 50% 62.5%,
-        v.$anim-color-2 62.5% 75%,
-        v.$anim-color-3 75% 87.5%,
-        v.$anim-color-4 87.5% 100%
-    );
+.u-margin-bottom-small {
+    margin-bottom: 1.5rem;
+}
 
-    // 2. Make the background twice as wide as the text container
-    background-size: 200% 100%;
+.u-margin-bottom-medium {
+    margin-bottom: 4rem;
+}
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+.u-margin-bottom-big {
+    margin-bottom: 8rem;
 }

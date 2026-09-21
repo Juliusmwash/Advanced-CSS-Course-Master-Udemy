@@ -1,0 +1,39 @@
+@use "../abstracts/variables" as v;
+@use "../base/utilities";
+@use "../abstracts/mixins" as m;
+
+.heading-primary {
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &__main {
+        display: block;
+
+        @include m.gradient-animate;
+        animation: moveInLeft 1s ease-out, gradient-rotate v.$gradient-animation-duration linear infinite;
+    }
+
+    &__sub {
+        display: block;
+
+        // @include m.gradient-animate;
+        animation: moveInRight 1s ease-out; //, gradient-rotate $gradient-animation-duration linear infinite;
+    }
+}
+
+.heading-secondary {
+    display: inline-block;
+     background-image: linear-gradient(
+        to right bottom,
+        v.$color-primary-blue, /*#7ed56fbb*/
+        v.$color-primary-green);
+
+    @include m.bg-clip-text;
+    
+    transition: all .2s;
+
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba(v.$color-black, 0.2);
+    }
+}
