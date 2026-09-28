@@ -64,3 +64,16 @@ body {
         color: v.$color-white;
     }
 }
+
+.feature-box {
+    font-size: 1.5rem;
+
+    &__icon {
+        font-size: 6rem;
+        // margin-bottom: 5.6rem;
+    }
+
+    &__text {
+        
+    }
+}
