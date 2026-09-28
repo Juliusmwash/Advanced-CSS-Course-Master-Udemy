@@ -56,7 +56,7 @@ body {
     &:link,
     &:visited {
         font-size: v.$default-font-size;
-        color: v.$color-primary;
+        color: v.$color-primary-light;
         text-decoration: none;
     }
 
@@ -70,10 +70,41 @@ body {
 
     &__icon {
         font-size: 6rem;
+        color: transparent;
         // margin-bottom: 5.6rem;
     }
+}
 
-    &__text {
-        
+.card {
+
+    &__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    &__details {
+
+        ul {
+
+            li {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    &__price-box {
+        color: v.$color-white;
+    }
+
+    &__price-only {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__price-value {
+        font-size: 6rem;
+        font-weight: 100;
     }
 }

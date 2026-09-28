@@ -15,7 +15,6 @@
 		to right bottom,
 		v.$color-primary-blue, /*#7ed56fbb*/
 		v.$color-primary-green);
-		color: transparent;
 
 		@include m.bg-clip-text;
 	}

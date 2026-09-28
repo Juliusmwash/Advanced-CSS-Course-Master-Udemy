@@ -33,6 +33,15 @@
             background-color: v.$color-white;
         }
     }
+
+    &--green {
+        background-color: v.$color-primary-light;
+        color: v.$color-white;
+
+        &::after {
+            background-color: v.$color-primary-light;
+        }
+    }
 S
     &--animated {
         animation: moveInBottom 0.5s ease-out 0.75s;
@@ -57,13 +66,13 @@ S
     &:link,
     &:visited {
         display: inline-block;
-        border-bottom: 1px solid v.$color-primary;
+        border-bottom: 1px solid v.$color-primary-light;
         padding: 3px;
         transition: all .2s;
     }
 
     &:hover {
-        background-color: v.$color-primary;
+        background-color: v.$color-primary-light;
         box-shadow: 0 1rem 2rem rgba(v.$color-black, .15);
         transform: translateY(-2px);
     }
