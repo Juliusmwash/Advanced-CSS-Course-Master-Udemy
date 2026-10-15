@@ -108,3 +108,14 @@ body {
         font-weight: 100;
     }
 }
+
+.story {
+    font-size: v.$default-font-size;
+
+    &__caption {
+        color: v.$color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+    }
+}
