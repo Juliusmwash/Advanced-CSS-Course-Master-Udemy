@@ -1,6 +1,6 @@
 @use "abstracts/functions";
 @use "abstracts/mixins";
-@use "abstracts/variables" as v;
+@use "abstracts/variables";
 
 @use "base/base";
 @use "base/animations";
@@ -18,5 +18,6 @@
 @use "components/card";
 @use "components/story";
 @use "components/bg-video";
+@use "components/form";
 
 @use "pages/home";
