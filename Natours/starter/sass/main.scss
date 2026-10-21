@@ -1,6 +1,6 @@
-@use "abstracts/functions";
-@use "abstracts/mixins";
-@use "abstracts/variables";
+// @use "abstracts/functions";
+// @use "abstracts/mixins";
+// @use "abstracts/variables";
 
 @use "base/base";
 @use "base/animations";
@@ -21,5 +21,6 @@
 @use "components/story";
 @use "components/bg-video";
 @use "components/form";
+@use "components/popup";
 
 @use "pages/home";

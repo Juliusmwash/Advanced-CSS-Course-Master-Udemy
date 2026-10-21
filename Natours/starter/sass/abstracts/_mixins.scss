@@ -1,5 +1,12 @@
 @use "../abstracts/variables" as v;
 
+@mixin abosulte-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 @mixin clearfix {
     &::after {
         content: "";
