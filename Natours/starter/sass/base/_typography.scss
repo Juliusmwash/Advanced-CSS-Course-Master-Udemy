@@ -137,3 +137,21 @@ body {
         font-weight: 700;
     }
  }
+
+ .footer {
+    font-size: 1.4rem;
+    color: v.$color-grey-light-1;
+
+    &__link {
+        &:link,
+        &:visited {
+            color: inherit;
+            text-transform: uppercase;
+        }
+
+        &:hover,
+        &:active {
+            color: v.$color-primary-light;
+        }
+    }
+ }
