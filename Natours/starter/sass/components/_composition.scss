@@ -1,9 +1,10 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .composition {
     position: relative;
 
-    &__photo {
+    &__photo {display: block;
         width: 55%;
         box-shadow: 0 1.5rem 4rem rgba(v.$color-black, .4);
         //border-radius: 2px;
@@ -12,19 +13,36 @@
         transition: all .1s;
         outline-offset: 2rem;
 
+        @include m.respond(tab-port) {
+            width: 38%;
+        }
+
         &--p1 {
             left: 0;
-            top: -2rem;
+            top: -3rem;
+
+            @include m.respond(tab-port) {
+                top: 0;
+            }
         }
 
         &--p2 {
             right: 0;
             top: 2rem;
+
+            @include m.respond(tab-port) {
+                top: 0;
+            }
         }
 
         &--p3 {
             left: 20%;
             top: 10rem;
+
+            @include m.respond(tab-port) {
+                left: 31%;
+                top: -20px;
+            }
         }
 
         &:hover {

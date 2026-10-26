@@ -1,17 +1,56 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .footer {
     background-color: v.$color-grey-dark-3;
     padding: 10rem 0;
 
+    @include m.respond(tab-port) {
+        margin: 0 auto;
+    }
+
     &__logo-box {
         text-align: center;
-        margin-bottom: 8rem;
+        margin-bottom: 6rem;
+    }
+
+    &--row-mod {
+        @include m.respond(desktop) {
+            width: 95% !important;
+        }
+
+        @include m.respond(tab-land) {
+            width: 70%;
+        }
+    }
+
+    &--col-mod {
+        @include m.respond(tab-land) {
+            width: 100% !important;
+            float: none;
+            margin: 0 auto;
+            font-size: 1.6rem;
+        }
+    }
+
+    &--col-mod:not(:last-child) {
+        @include m.respond(tab-land) {
+            margin-right: 0 !important;
+            margin-bottom: 4rem !important;
+        }
     }
 
     &__logo {
         width: 15rem;
         height: auto;
+
+        @include m.respond(tab-port) {
+            width: 14rem;
+        }
+
+        @include m.respond(phone) {
+            width: 12rem;
+        }
     }
 
     &__navigation {
@@ -51,7 +90,7 @@
     &__copyright {
         border-top: 1px solid v.$color-gray-dark;
         padding-top: 2rem;
-        width: 80%;
+        // width: 80%;
         float: right;
     }
 }

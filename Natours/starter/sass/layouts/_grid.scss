@@ -7,6 +7,15 @@
     
     &:not(:last-child) {
         margin-bottom: v.$gutter-vertical;
+
+        @include m.respond(tab-port) {
+            margin-bottom: v.$gutter-vertical-small;
+        }
+
+    }
+
+    @include m.respond(tab-port) {
+        width: 80%;
     }
 
     @include m.clearfix;
@@ -17,6 +26,18 @@
 
         &:not(:last-child) {
             margin-right: v.$gutter-horizontal;
+
+            @include m.respond(tab-port) {
+                // margin-right: 0;
+                margin: 0 auto;
+                margin-bottom: v.$gutter-vertical-small;
+            }
+        }
+
+        @include m.respond(tab-port) {
+            width: 100% !important;
+            float: none;
+            margin: 0 auto;
         }
     }
 

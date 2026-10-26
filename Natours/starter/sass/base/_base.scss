@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 *,
 *::before,
@@ -10,10 +11,30 @@
 
 html {
     // This defines what 1rem is.
-    font-size: 65.2%;
+    font-size: 65.2%; //1rem = 10px
+
+    @include m.respond(big-desktop) { // min-width = 1800px
+        font-size: 75%; // 1rem = 12px, 12/16 = 75%
+    }
+
+    @include m.respond(tab-land) { // max-width = 1200px
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include m.respond(tab-port) { // max-width = 900px
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include m.respond(phone) { // max-width = 600px
+        font-size: 43.75%; // 1rem = 7px, 7/16 = 43.75%
+    }
 }
 
 body {
     box-sizing: border-box;
     padding: 3rem;
+
+    @include m.respond(phone) {
+        padding: 0;
+    }
 }

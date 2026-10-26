@@ -29,6 +29,10 @@
         v.$color-primary-green);
 
     @include m.bg-clip-text;
+
+    @include m.respond(tab-port) {
+        margin-top: 10rem;
+    }
     
     transition: all .2s;
 

@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .header {
     height: 95vh;
@@ -9,9 +10,14 @@
         url(../img/hero.jpg);
     background-size: cover;
     background-position: top;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
     position: relative;
+
+    @include m.respond(tab-port) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 87vh, 0 100%);
+    }
 
     &__logo-box {
         position: absolute;
