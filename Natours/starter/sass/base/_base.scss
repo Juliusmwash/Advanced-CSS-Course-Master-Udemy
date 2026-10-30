@@ -38,3 +38,8 @@ body {
         padding: 0;
     }
 }
+
+::selection {
+    background-color: v.$color-primary-light;
+    color: v.$color-white;
+}
