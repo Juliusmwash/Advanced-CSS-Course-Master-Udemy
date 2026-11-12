@@ -39,6 +39,13 @@
                         <img src="img/user.jpg" alt="User photo" class="user-nav__user-photo">
                         <span class="user-nav__user-name">Julius</span>
                     </div>
+
+                    <div class="side-nav-toggle" style="display: none;">
+                        <input type="checkbox" class="side-nav-toggle__checkbox" id="navi-toggle">
+                        <label for="navi-toggle" class="side-nav-toggle__button">
+                            <span class="side-nav-toggle__icon"></span>
+                        </label>
+                    </div>
                 </nav>
             </header>
 
@@ -191,8 +198,19 @@
                         </div>
                     </div>
 
+                    <div class="cta">
+                        <h2 class="cta__book-now">
+                            Good news! We have 4 free rooms for your selected dates!
+                        </h2>
+                        <button class="btn">
+                            <span class="btn__visible">Book now</span>
+                            <span class="btn__invisible">Only 4 rooms left</span>
+                        </button>
+                    </div>
+
                 </main>
             </div>
         </div>
+        <div class="popup"></div>
     </body>
 </html>

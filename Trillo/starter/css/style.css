@@ -23,6 +23,8 @@ Grey dark 3: #999
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
+  --color-white: #fff;
+  --color-black: #000000;
   --shadow-dark: 0 2rem 6rem rgba(0,0,0,.3);
   --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
   --line: 1px solid var(--color-grey-light-2);
@@ -43,6 +45,11 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+@media only screen and (max-width: 70em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -60,7 +67,15 @@ body {
   margin: 8rem auto;
   background-color: var(--color-grey-light-2);
   box-shadow: var(--shadow-dark);
+  overflow: hidden;
   min-height: 50rem;
+}
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
@@ -75,6 +90,12 @@ body {
 
 .content {
   display: flex;
+  position: relative;
+}
+@media only screen and (max-width: 56.88em) {
+  .content {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -83,6 +104,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.2s;
+}
+@media only screen and (max-width: 31.25em) {
+  .sidebar {
+    opacity: 0;
+    visibility: hidden;
+    width: 90%;
+    border-radius: 3px;
+    position: absolute;
+    flex-direction: row;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5rem 0;
+    z-index: 12;
+    background-color: rgb(from var(--color-grey-dark-1) r g b/0.9);
+  }
 }
 
 .hotel-view {
@@ -97,6 +135,12 @@ body {
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
 }
+@media only screen and (max-width: 56.88em) {
+  .detail {
+    flex-direction: column;
+    font-size: 1.6rem;
+  }
+}
 
 .description {
   background-color: #fff;
@@ -104,6 +148,12 @@ body {
   margin-right: 4.5rem;
   box-shadow: var(--shadow-light);
   padding: 3rem;
+}
+@media only screen and (max-width: 56.88em) {
+  .description {
+    margin-right: 0;
+    margin-bottom: 4.5rem;
+  }
 }
 
 .user-reviews {
@@ -201,6 +251,11 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media only screen and (max-width: 31.25em) {
+  .user-nav__user {
+    display: none;
+  }
+}
 .user-nav__user-photo {
   height: 3.75rem;
   border-radius: 50%;
@@ -211,12 +266,34 @@ body {
   font-size: 1.4rem;
   list-style: none;
   margin-top: 3.5rem;
+  transition: all 0.2s;
+}
+@media only screen and (max-width: 56.88em) {
+  .side-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .side-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
 }
 .side-nav__item {
   position: relative;
 }
 .side-nav__item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .side-nav__item {
+    width: 100%;
+  }
 }
 .side-nav__item:before {
   content: "";
@@ -260,6 +337,11 @@ body {
   padding: 2.5rem;
   color: var(--color-grey-light-4);
 }
+@media only screen and (max-width: 56.88em) {
+  .legal {
+    display: none;
+  }
+}
 
 .gallery {
   display: flex;
@@ -274,6 +356,11 @@ body {
   align-items: center;
   border-bottom: var(--line);
 }
+@media only screen and (max-width: 56.88em) {
+  .overview {
+    justify-content: space-around;
+  }
+}
 .overview__heading {
   font-size: 2.25rem;
   font-weight: 300;
@@ -281,9 +368,19 @@ body {
   letter-spacing: 1px;
   padding: 1.5rem 3rem;
 }
+@media only screen and (max-width: 56.88em) {
+  .overview__heading {
+    padding: 0;
+  }
+}
 .overview__stars {
   margin-right: auto;
   display: flex;
+}
+@media only screen and (max-width: 56.88em) {
+  .overview__stars {
+    margin-right: 0;
+  }
 }
 .overview__icon-star, .overview__icon-location {
   width: 1.75rem;
@@ -294,6 +391,11 @@ body {
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+}
+@media only screen and (max-width: 31.25em) {
+  .overview__location {
+    display: none;
+  }
 }
 .overview__icon-location {
   margin-right: 0.5rem;
@@ -308,6 +410,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media only screen and (max-width: 56.88em) {
+  .overview__rating {
+    margin-left: 0;
+  }
 }
 .overview__rating-average {
   font-size: 2.25rem;
@@ -344,10 +451,10 @@ body {
   outline: none;
 }
 .btn-inline:focus span {
-  animation: marginGrow 0.833s infinite;
+  animation: marginGrow 1s infinite;
 }
 .btn-inline:focus {
-  animation: pulsate 0.833s infinite;
+  animation: pulsate 1s infinite;
 }
 
 @keyframes pulsate {
@@ -366,12 +473,15 @@ body {
 }
 @keyframes marginGrow {
   0% {
+    transform: scale(1);
     margin-left: 4px;
   }
   50% {
-    margin-left: 8px;
+    transform: scale(1.05);
+    margin-left: 6px;
   }
   100% {
+    transform: scale(1);
     margin-left: 4px;
   }
 }
@@ -387,6 +497,12 @@ body {
   border-bottom: var(--line);
   display: flex;
   flex-wrap: wrap;
+}
+@media only screen and (max-width: 31.25em) {
+  .list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
 }
 .list__item {
   flex: 0 0 50%;
@@ -422,6 +538,17 @@ body {
 .recommend__photo:not(:last-child) {
   margin-right: -1.5rem;
 }
+@media only screen and (max-width: 56.88em) {
+  .recommend__photo {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+@media only screen and (max-width: 31.25em) {
+  .recommend {
+    flex-direction: column;
+  }
+}
 
 .review {
   background-color: #fff;
@@ -440,6 +567,11 @@ body {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 56.88em) {
+  .review__user {
+    justify-content: flex-start;
+  }
+}
 .review__photo {
   height: 4.5rem;
   width: 4.5rem;
@@ -449,20 +581,40 @@ body {
 .review__user-box {
   margin-right: auto;
 }
+@media only screen and (max-width: 56.88em) {
+  .review__user-box {
+    margin-right: 4rem;
+  }
+}
 .review__user-name {
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
 }
+@media only screen and (max-width: 56.88em) {
+  .review__user-name {
+    font-size: 1.3rem;
+  }
+}
 .review__user-date {
   font-size: 1rem;
   color: var(--color-grey-dark-3);
+}
+@media only screen and (max-width: 56.88em) {
+  .review__user-date {
+    font-size: 1.2rem;
+  }
 }
 .review__user-rating {
   color: var(--color-primary);
   font-size: 2.2rem;
   font-weight: 300;
+}
+@media only screen and (max-width: 56.88em) {
+  .review__user-rating {
+    font-weight: 400;
+  }
 }
 .review::before {
   content: "“";
@@ -474,6 +626,165 @@ body {
   color: var(--color-grey-light-2);
   font-family: Arial, Helvetica, sans-serif;
   z-index: 1;
+}
+@media only screen and (max-width: 56.88em) {
+  .review {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .review:last-of-type {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.cta {
+  padding: 3.5rem;
+  text-align: center;
+}
+.cta__book-now {
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.btn > * {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s;
+}
+.btn__visible {
+  padding: 2rem 7.5rem;
+}
+.btn__invisible {
+  padding: 2rem 0;
+  position: absolute;
+  left: 0;
+  top: -100%;
+}
+.btn:hover {
+  background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+}
+.btn:hover .btn__visible {
+  transform: translateY(100%);
+}
+.btn:hover .btn__invisible {
+  top: 0;
+}
+.btn:focus {
+  outline: none;
+  animation: pulsate 1s infinite;
+}
+
+.side-nav-toggle {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 31.25em) {
+  .side-nav-toggle {
+    display: flex !important;
+  }
+}
+.side-nav-toggle__checkbox {
+  display: none;
+}
+.side-nav-toggle__button {
+  height: 5rem;
+  width: 5rem;
+  z-index: 2000;
+  text-align: center;
+  cursor: pointer;
+}
+.side-nav-toggle__icon {
+  position: relative;
+  margin-top: 2.5rem;
+}
+.side-nav-toggle__icon, .side-nav-toggle__icon::before, .side-nav-toggle__icon::after {
+  width: 2.5rem;
+  height: 2px;
+  background-color: var(--color-grey-dark-1);
+  display: inline-block;
+}
+.side-nav-toggle__icon::before, .side-nav-toggle__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.side-nav-toggle__icon::before {
+  top: -0.8rem;
+}
+.side-nav-toggle__icon::after {
+  top: 0.8rem;
+}
+.side-nav-toggle__button:hover .side-nav-toggle__icon::before {
+  top: -1rem;
+}
+.side-nav-toggle__button:hover .side-nav-toggle__icon::after {
+  top: 1rem;
+}
+.side-nav-toggle__checkbox:checked + .side-nav-toggle__button .side-nav-toggle__icon {
+  background-color: transparent;
+}
+.side-nav-toggle__checkbox:checked + .side-nav-toggle__button .side-nav-toggle__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+  background-color: red;
+}
+.side-nav-toggle__checkbox:checked + .side-nav-toggle__button {
+  background-color: var(--color-white);
+  border-radius: 50%;
+}
+.side-nav-toggle__checkbox:checked + .side-nav-toggle__button .side-nav-toggle__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+  background-color: red;
+}
+body:has(.side-nav-toggle__checkbox:checked) .popup {
+  opacity: 1;
+  visibility: visible;
+}
+
+body:has(.side-nav-toggle__checkbox:checked) .sidebar {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(from var(--color-black) r g b/0.8);
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+@supports (-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px)) {
+  .popup {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    background-color: rgb(from var(--color-black) r g b/0.4);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
